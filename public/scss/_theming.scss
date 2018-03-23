@@ -1,0 +1,228 @@
+
+  $font-color: (
+    'primary': black,
+    'secundary': white,
+    'tertiary': red,
+    'quaternary': green,
+    'quinary': blue,
+    'senary': yellow
+  ) !default;
+  $background-color: (
+    'primary': white,
+    'secundary': black,
+    'tertiary': red,
+    'quaternary': green,
+    'quinary': blue,
+    'senary': yellow
+  ) !default;
+  $font-family: (
+    'primary': ("Times New Roman","Times", "Serif"),
+    'secundary': ("Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif")
+  ) !default;
+  $text-weight: (
+    'regular': 500,
+    'bold': 900,
+    'light': 100
+  ) !default;
+  $text-transform: (
+    'normal': none,
+    'capitalize': capitalize,
+    'uppercase': uppercase,
+    'lowercase': lowercase,
+  ) !default;
+
+@each $type, $color in $font-color
+{
+  .font-color-#{$type}
+  {
+    .alert
+    {
+      background-color:$color;
+    }
+    input[type=file] {
+      color:$color;
+    }
+    #firstScreen
+    {
+      .navigation span
+      {
+        color: $color;
+      }
+      .content
+      {
+        .dropdown button .dropdown-content a.active
+        {
+          background-color:rgba($color,.5);
+        }
+      }
+    }
+    #writerScreen,
+    #readerScreen
+    {
+      p
+      {
+        b
+        {
+          background-color: $color;
+        }
+      }
+    }
+    .part
+    {
+      &Information
+      {
+        .quote
+        {
+          background-color: $color;
+        }
+      }
+    }
+    hr
+    {
+      border-bottom:.2em solid $color;
+    }
+    button
+    {
+      border-color: $color;
+      &,
+      &:link,
+      &:hover,
+      &:active,
+      &:visited
+      {
+        color:$color;
+      }
+    }
+    .dropdown:hover button
+    {
+      background-color: rgba($color,.2)
+    }
+    p,
+    h3,
+    footer
+    {
+      color:$color;
+    }
+    a
+    {
+      &,&:hover,&:active,&:visited,&:link{
+        color:$color;
+      }
+    }
+    #room
+    {
+      color: rgba($color,1);
+
+    }
+    #help-list p span{
+     border-color: $color;
+   }
+   a.fullscreen:before
+   {
+     text-shadow:0 0 10px $color;
+   }
+   progress {
+     background-color: $color;
+   }
+   progress::-webkit-progress-bar {
+     background-color: $color;
+   }
+  }
+}
+@each $type, $color in $background-color
+{
+  .background-color-#{$type}
+  {
+    .alert p
+    {
+      color: $color;
+    }
+    .overlay.full,
+    .overlay.half
+    {
+      background-color:$color;
+    }
+    input[type=file]::before {
+      background-color:$color;
+    }
+    section, #firstScreen .content
+    {
+      background: $color;
+    }
+    #writerScreen,
+    #readerScreen
+    {
+      p
+      {
+        b
+        {
+          color: $color;
+        }
+      }
+    }
+    .part
+    {
+      &Information
+      {
+        .quote
+        {
+          color: $color;
+        }
+      }
+    }
+    button
+    {
+      background-color:$color;
+    }
+    #room
+    {
+      //color: $color;
+      border-color:darken($color,5%);
+      background-color:darken($color,5%);
+    }
+    a.fullscreen:before
+    {
+      color:$color;
+    }
+    progress {
+      color: $color;
+    }
+    progress::-webkit-progress-value {
+      background-color: $color;
+    }
+    progress::-moz-progress-bar {
+      background-color: $color;
+    }
+  }
+}
+@each $type, $font in $font-family
+{
+  body,html
+  {
+    &.font-family-#{$type}
+    {
+      font-family: $font;
+
+    }
+  }
+}
+@each $text, $weight in $text-weight
+{
+  body,html
+  {
+    &.text-weight-#{$text}
+    {
+      font-weight: $weight;
+    }
+  }
+}
+@each $text, $transform in $text-transform
+{
+  body,html
+  {
+    &.text-transform-#{$text}
+    {
+      text-transform: $transform;
+    }
+  }
+}

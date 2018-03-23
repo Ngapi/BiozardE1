@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <title>Europe 1 Prompteur</title>
+  <link rel="stylesheet" href="css/styles.min.css" media="screen">
+  <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<style id="__web-inspector-hide-shortcut-style__" type="text/css">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+</style></head>
+<body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
+  <span id="defaultRoomName" style="display:none;visibility:none;opacity:0;height:0;"></span>
+  <!-- default -->
+  <a href="#fullscreen" class="sectionNavigation fullscreen fa-compress"></a>
+  <div class="overlay alert" style="display: none;">
+    <p style="text-align:center;"><span class="alert-text"></span>
+      <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </p>
+  </div>
+  <!-- end default -->
+  <!-- start intro screen -->
+  <section id="firstScreen" class="">
+    
+    <center><img src="media/PROMP.png"/></center>
+    <div id="settingsarea" class="content">
+      <hr>
+      <div class="part part1">
+        <p>Choisissez votre mot de passe</p>
+        <br>
+        <input type="text" class="input room" name="firstname" id="room" value="">
+        <button href="#mainScreenRandom" class="sectionNavigation" title="create random name for room"><i class="fa fa-random" aria-hidden="true"></i></button>
+        <button href="#mainScreenNext" class="sectionNavigation input submit" value="join" id="createRoom">Rejoindre la conférence</button>
+      </div>
+
+      <div class="part part2 hidden">
+        <p>Choisissez votre travail</p>
+        <br>
+        <button href="#writer" class="sectionNavigation">Redacteur</button>
+        <button href="#reader" class="sectionNavigation">Lecteur</button>
+        <button href="#mainScreenPrevious" class="sectionNavigation"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Annuler</button>
+      </div>
+      <hr>
+      <p>
+        <button href="#mainScreenOptions" class="sectionNavigation" title="Set some options">Options <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        <button href="#mainScreenHelp" class="sectionNavigation" title="how to navigate in reader and writer">Aide <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+      </p>
+      <span class="mainScreenOptions overlay full" style="display:none;">
+        <span class="partInformation">
+          <h3>Les options</h3>
+          <span>
+            <div class="dropdown">
+              <h3 class="dropbtn">Couleur de la police</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="font-color-primary" class="active" style="color:black;">Noir <span>(Par défaut)</span></a>
+                <a href="#" data-href="font-color-secundary" style="color:white;">Blanc</a>
+                <a href="#" data-href="font-color-tertiary" style="color:red;">Rouge</a>
+                <a href="#" data-href="font-color-quaternary" style="color:green;">Vert</a>
+                <a href="#" data-href="font-color-quinary" style="color:blue;">Bleu</a>
+                <a href="#" data-href="font-color-senary" style="color:yellow;">Jaune</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Couleur de fond</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="background-color-primary" class="active" style="background-color:white;">Blanc <span>(Par défaut)</span></a>
+                <a href="#" data-href="background-color-secundary" style="background-color:black;">Noir</a>
+                <a href="#" data-href="background-color-tertiary" style="background-color:red;">Rouge</a>
+                <a href="#" data-href="background-color-quaternary" style="background-color:green;">Green</a>
+                <a href="#" data-href="background-color-quinary" style="background-color:blue;">Bleu</a>
+                <a href="#" data-href="background-color-senary" style="background-color:yellow;">Jaune</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Le type de police</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="font-family-primary" class="active" style="font-family:serif">Serif <span>(Par défaut)</span></a>
+                <a href="#" data-href="font-family-secundary" style="font-family:sans-serif">Sans-serif</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Taille du texte</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="text-weight-light" style="font-weight:100">Faible</a>
+                <a href="#" data-href="text-weight-normal" class="active" style="font-weight:500">Normal <span>(default)</span></a>
+                <a href="#" data-href="text-weight-bold" style="font-weight:900">Gros</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Text transform</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="text-transform-normal" class="active" style="text-transform:normal">normal <span>(default)</span></a>
+                <a href="#" data-href="text-transform-capitalize" style="text-transform:capitalize">capitalize</a>
+                <a href="#" data-href="text-transform-lowercase" style="text-transform:lowercase">lowercase</a>
+                <a href="#" data-href="text-transform-uppercase" style="text-transform:uppercase">uppercase</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Reading style</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="readerStyle-One" class="active">Stick scroll <span>(default)</span></a>
+                <a href="#" data-href="readerStyle-Two">Just scroll <span>(classic)</span></a>
+              </div>
+            </div>
+          </span>
+        </span>
+        <span class="partButton">
+          <button href="#reset" class="sectionNavigation buttonExeption" title="restore settings to default"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+          <button href="#mainScreenOptionsClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
+      </span>
+      <span class="overlay full infoScreen mainScreenHelp" style="display:none;">
+        <span class="partInformation">
+          <h3>How to ...</h3>
+          <span>
+            <h3>Options</h3>
+            <p>- Choos your look and feel</p>
+            <p>- Take a reading style (Stick Scroll or Just Scroll)</p>
+            <p>- <i class="fa fa-floppy-o" aria-hidden="true"></i> Automatic save when option is selected</p>
+            <p>- <i class="fa fa-refresh" aria-hidden="true"></i> Reset to default settings</p>
+          </span>
+          <span>
+            <h3>Redacteur</h3>
+            <p>1. Click on the text input field</p>
+            <p>2. Type your text</p>
+            <p>3. Hit <span>Return</span> to submit</p>
+            <p>4. Type your next sentence</p>
+          </span>
+          <span>
+            <h3>Lecteur</h3>
+            <h4>Stick Scroll<span>(default)</span></h4>
+            <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+            <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+            <p>Keypress Emergency <br><span>Return</span></p>
+            <h4>Just Scroll <span>(classic)</span></h4>
+            <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+            <p>Normal Navigation</p>
+            <p>Keypress Emergency <br><span>Return</span></p>
+          </span>
+        </span>
+        <span class="partButton">
+          <button href="#mainScreenHelpClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
+      </span>
+      <footer><a href="http://quinten.mares.be" target="_blank">Lagardère Active</a> — <a href="http://www.europe1.fr/" target="_blank">Europe 1</a> <i class="fa fa-copyright"></i> 2018</footer>
+    </div>
+  </section>
+  <!-- end intro screen -->
+  <!-- start scripts -->
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main_start.min.js" charset="utf-8"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-50364010-9', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- end scripts -->
+
+
+</body></html>

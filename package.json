@@ -1,0 +1,35 @@
+{
+  "name": "digipromp",
+  "version": "1.7.0",
+  "description": "A digital online autocue, for a faster way to communicate",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "heroku-prebuild": "npm install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintenm/digipromp.git"
+  },
+  "keywords": [
+    "autocue",
+    "website",
+    "webbassed",
+    "digital",
+    "prompter",
+    "livestreams",
+    "internet",
+    "presentation"
+  ],
+  "author": "Quinten Mares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintenm/digipromp/issues"
+  },
+  "homepage": "https://github.com/quintenm/digipromp#readme"
+}
