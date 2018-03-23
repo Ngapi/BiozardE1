@@ -1,4 +1,4 @@
-FROM raspbian/stretch
+FROM raspbian/jessie
 
 MAINTAINER Damien Marquet <ngaziki@live.fr>
 
